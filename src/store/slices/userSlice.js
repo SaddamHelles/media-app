@@ -1,13 +1,38 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchUsers } from '../thunks/fetchUsers';
+import { addUser } from '../thunks/addUser';
 
 const usersSlice = createSlice({
   name: 'user',
-  initialState: { data: [],loading:false, error:null },
-  reducers: {
-    addUser() {},
-    removeUser() {},
+  initialState: { data: [], isLoading: false, error: null },
+  reducers: {},
+  extraReducers(builder) {
+    builder.addCase(fetchUsers.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(fetchUsers.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = action.payload;
+    });
+    builder.addCase(fetchUsers.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error;
+    });
+
+    // ADD user
+    builder.addCase(addUser.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(addUser.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data.push(action.payload);
+    });
+    builder.addCase(addUser.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error;
+    });
   },
 });
 
 export const userReducer = usersSlice.reducer;
-export const { addUser, removeUser } = usersSlice.actions;
+// export const { addUser, removeUser } = usersSlice.actions;

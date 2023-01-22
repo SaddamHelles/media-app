@@ -1,5 +1,50 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "Seraj"
+    },
+    {
+      "id": 2,
+      "name": "Mosa"
+    },
+    {
+      "name": "Duane Smitham",
+      "id": 3
+    },
+    {
+      "name": "Ian Considine",
+      "id": 5
+    },
+    {
+      "name": "Leslie Bartoletti",
+      "id": 6
+    },
+    {
+      "name": "Margarita Kuhlman",
+      "id": 7
+    },
+    {
+      "name": "Janie Green",
+      "id": 8
+    },
+    {
+      "name": "Alexis Homenick",
+      "id": 9
+    },
+    {
+      "name": "Mr. Bradford Farrell",
+      "id": 10
+    },
+    {
+      "name": "Mildred Rolfson",
+      "id": 11
+    },
+    {
+      "name": "Nicole Koelpin",
+      "id": 12
+    }
+  ],
   "albums": [],
   "photos": []
 }
