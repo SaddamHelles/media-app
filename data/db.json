@@ -1,50 +1,223 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Seraj"
+      "name": "Seraj",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Mosa"
-    },
-    {
-      "name": "Duane Smitham",
-      "id": 3
-    },
-    {
-      "name": "Ian Considine",
+      "name": "Lamar Schowalter",
       "id": 5
     },
     {
-      "name": "Leslie Bartoletti",
-      "id": 6
-    },
-    {
-      "name": "Margarita Kuhlman",
-      "id": 7
-    },
-    {
-      "name": "Janie Green",
+      "name": "Misty Grant",
       "id": 8
     },
     {
-      "name": "Alexis Homenick",
-      "id": 9
-    },
-    {
-      "name": "Mr. Bradford Farrell",
+      "name": "Jeffrey Pouros",
       "id": 10
     },
     {
-      "name": "Mildred Rolfson",
+      "name": "Virgil Pagac",
+      "id": 11
+    }
+  ],
+  "albums": [
+    {
+      "id": 2,
+      "title": "University Pictures",
+      "userId": 1
+    },
+    {
+      "userId": 5,
+      "title": "Oriental Plastic Cheese",
+      "id": 5
+    },
+    {
+      "userId": 5,
+      "title": "Practical Steel Computer",
+      "id": 6
+    },
+    {
+      "userId": 5,
+      "title": "Electronic Steel Chips",
+      "id": 16
+    },
+    {
+      "userId": 5,
+      "title": "Unbranded Rubber Towels",
+      "id": 17
+    },
+    {
+      "userId": 8,
+      "title": "Oriental Bronze Keyboard",
+      "id": 18
+    },
+    {
+      "userId": 8,
+      "title": "Incredible Concrete Shoes",
+      "id": 19
+    },
+    {
+      "userId": 5,
+      "title": "Gorgeous Bronze Bike",
+      "id": 20
+    },
+    {
+      "userId": 5,
+      "title": "Gorgeous Plastic Table",
+      "id": 21
+    },
+    {
+      "userId": 10,
+      "title": "Oriental Wooden Cheese",
+      "id": 22
+    },
+    {
+      "userId": 10,
+      "title": "Handmade Soft Cheese",
+      "id": 23
+    },
+    {
+      "userId": 8,
+      "title": "Rustic Soft Ball",
+      "id": 24
+    },
+    {
+      "userId": 10,
+      "title": "Oriental Granite Chips",
+      "id": 25
+    },
+    {
+      "userId": 8,
+      "title": "Small Plastic Pizza",
+      "id": 26
+    },
+    {
+      "userId": 8,
+      "title": "Electronic Fresh Mouse",
+      "id": 27
+    },
+    {
+      "userId": 11,
+      "title": "Licensed Cotton Keyboard",
+      "id": 28
+    },
+    {
+      "userId": 11,
+      "title": "Recycled Frozen Chair",
+      "id": 29
+    },
+    {
+      "userId": 11,
+      "title": "Sleek Concrete Soap",
+      "id": 30
+    },
+    {
+      "userId": 11,
+      "title": "Gorgeous Cotton Table",
+      "id": 31
+    },
+    {
+      "userId": 1,
+      "title": "Rustic Fresh Cheese",
+      "id": 37
+    },
+    {
+      "userId": 1,
+      "title": "Electronic Metal Chicken",
+      "id": 38
+    },
+    {
+      "userId": 1,
+      "title": "Sleek Frozen Pants",
+      "id": 39
+    },
+    {
+      "userId": 1,
+      "title": "Ergonomic Steel Shirt",
+      "id": 40
+    },
+    {
+      "userId": 11,
+      "title": "Electronic Steel Ball",
+      "id": 41
+    }
+  ],
+  "photos": [
+    {
+      "id": 1,
+      "url": "https://loremflickr.com/150/150/abstract?lock=53036",
+      "albumId": 2
+    },
+    {
+      "albumId": 22,
+      "url": "https://loremflickr.com/150/150/abstract?lock=53036",
+      "id": 2
+    },
+    {
+      "albumId": 23,
+      "url": "https://loremflickr.com/150/150/abstract?lock=23596",
+      "id": 3
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/150/150/abstract?lock=52404",
+      "id": 4
+    },
+    {
+      "albumId": 24,
+      "url": "https://loremflickr.com/150/150/abstract?lock=84359",
+      "id": 5
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/150/150/abstract?lock=27472",
+      "id": 6
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/150/150/abstract?lock=2506",
+      "id": 8
+    },
+    {
+      "albumId": 23,
+      "url": "https://loremflickr.com/150/150/abstract?lock=36801",
+      "id": 9
+    },
+    {
+      "albumId": 23,
+      "url": "https://loremflickr.com/150/150/abstract?lock=43166",
+      "id": 10
+    },
+    {
+      "albumId": 23,
+      "url": "https://loremflickr.com/150/150/abstract?lock=95916",
       "id": 11
     },
     {
-      "name": "Nicole Koelpin",
+      "albumId": 23,
+      "url": "https://loremflickr.com/150/150/abstract?lock=18683",
       "id": 12
+    },
+    {
+      "albumId": 16,
+      "url": "https://loremflickr.com/150/150/abstract?lock=61365",
+      "id": 14
+    },
+    {
+      "albumId": 16,
+      "url": "https://loremflickr.com/150/150/abstract?lock=74518",
+      "id": 15
+    },
+    {
+      "albumId": 25,
+      "url": "https://loremflickr.com/150/150/abstract?lock=51320",
+      "id": 16
+    },
+    {
+      "albumId": 30,
+      "url": "https://loremflickr.com/150/150/abstract?lock=91910",
+      "id": 17
     }
-  ],
-  "albums": [],
-  "photos": []
+  ]
 }

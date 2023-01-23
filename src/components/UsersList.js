@@ -1,51 +1,70 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { fetchUsers, addUser } from '../store';
 import MySkeleton from './Skeleton';
 import Button from './Button';
-import { GoTrashcan } from 'react-icons/go';
+import { Snackbar, Alert } from '@mui/material';
+import { useThunk } from '../hooks/use-thunk';
+import UsersListItem from './UsersListItem';
 
 const UsersList = () => {
-  const dispatch = useDispatch();
-  const { data, isLoading, error } = useSelector(state => state.users);
-  // console.log('data: ', data);
+  const [doFetchUsers, isLoadingUsers, loadingUsersError] =
+    useThunk(fetchUsers);
+
+  const [doAddUser, isCreatingUser, creatingUserError] = useThunk(addUser);
+
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
+  const { data } = useSelector(state => state.users);
 
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+    doFetchUsers();
+  }, [doFetchUsers]);
 
-  if (isLoading) {
-    return <MySkeleton times={6} className="h-10 w-full" />;
+  const handleAddUser = () => {
+    doAddUser();
+  };
+
+  let content;
+  if (isLoadingUsers) {
+    content = <MySkeleton times={6} className="h-10 w-full" />;
+  } else if (loadingUsersError) {
+    content = <div>Error fetching data...</div>;
+  } else {
+    content = data?.map(user => <UsersListItem key={user.id} user={user} />);
   }
-  if (error) {
+
+  if (loadingUsersError) {
     return <p>Somthing went wrong!!</p>;
   }
 
-  const handleDeleteUser = id => {
-    // dispatch(deleteUser(id))
-  };
-
-  const handleAddUser = () => {
-    dispatch(addUser());
-  };
-
-  const renderedUsers = data?.map(user => (
-    <div key={user.id} className="mb-2 border rounded">
-      <div className="flex p-2 justify-between items-center cursor-pointer">
-        {user.name}
-        <Button danger onClick={() => handleDeleteUser(user.id)}>
-          <GoTrashcan />
-        </Button>
-      </div>
-    </div>
-  ));
   return (
     <div>
-      <div className="flex flex-row justify-between m-3">
+      <div className="flex flex-row justify-between items-center m-3">
         <h1 className="m-2 text-xl">Users</h1>
-        <Button onClick={handleAddUser}> + Add User</Button>
+        <Button loading={isCreatingUser} onClick={handleAddUser}>
+          + Add User
+        </Button>
+        {creatingUserError && (
+          <Snackbar
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            open={open}
+            autoHideDuration={4000}
+            onClose={handleClose}
+          >
+            <Alert severity="error" onClose={handleClose}>
+              Something went wrong!!
+            </Alert>
+          </Snackbar>
+        )}
       </div>
-      {renderedUsers}
+      {content}
     </div>
   );
 };
